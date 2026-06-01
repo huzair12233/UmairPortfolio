@@ -1,26 +1,236 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
+
+/* ─── Premium Aerospace Consultancy Design System ─────────────────────────
+   Palette:  #F7F6F3 Background · #1F2A44 Navy · #4B6382 Steel · #C88A3D Bronze
+   Ref:      Airbus · Boeing · MIT Aerospace · NASA Technical Reports
+   ─────────────────────────────────────────────────────────────────────── */
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Core palette */
+  --color-bg:            #F7F6F3;
+  --color-bg-white:      #FFFFFF;
+  --color-bg-muted:      #EEECEA;
+  --color-bg-navy:       #1F2A44;
+  --color-bg-navy-deep:  #171F34;
+
+  --color-navy:          #1F2A44;
+  --color-steel:         #4B6382;
+  --color-bronze:        #C88A3D;
+  --color-bronze-light:  #D4A06A;
+  --color-bronze-pale:   #F5EAD8;
+  --color-grey:          #D9D9D9;
+  --color-grey-light:    #EAEAE7;
+  --color-text:          #222222;
+  --color-text-secondary:#5A6A7A;
+  --color-text-muted:    #8A9BAA;
+
+  /* shadcn compatibility */
+  --color-background:    var(--color-bg);
+  --color-foreground:    var(--color-text);
+  --color-card:          var(--color-bg-white);
+  --color-card-foreground: var(--color-text);
+  --color-primary:       var(--color-navy);
+  --color-primary-foreground: #FFFFFF;
+  --color-secondary:     var(--color-bg-muted);
+  --color-secondary-foreground: var(--color-navy);
+  --color-muted:         var(--color-bg-muted);
+  --color-muted-foreground: var(--color-text-secondary);
+  --color-accent:        var(--color-bronze-pale);
+  --color-accent-foreground: var(--color-navy);
+  --color-border:        var(--color-grey);
+  --color-input:         var(--color-bg-white);
+  --color-ring:          var(--color-navy);
+
+  /* Typography */
+  --font-display: var(--font-cormorant);
+  --font-sans:    var(--font-source-sans);
+  --font-mono:    var(--font-ibm-plex-mono);
+
+  /* Spacing */
+  --radius: 0.25rem;
+  --radius-sm: 0.125rem;
+  --radius-md: 0.25rem;
+  --radius-lg: 0.375rem;
+  --radius-xl: 0.5rem;
+
+  /* Z-index */
+  --z-nav:     40;
+  --z-modal:   50;
+  --z-toast:   60;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ─── Base ────────────────────────────────────────────────────────────────── */
+
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: #F7F6F3;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: #F7F6F3;
+    color: #222222;
+    font-family: var(--font-source-sans), 'Helvetica Neue', Arial, sans-serif;
+    font-size: 17.5px;
+    line-height: 1.72;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-cormorant), Georgia, serif;
+    line-height: 1.12;
+    letter-spacing: -0.01em;
+    color: #1F2A44;
+    font-weight: 600;
+  }
+
+  h4, h5, h6 {
+    font-family: var(--font-source-sans), sans-serif;
+    color: #1F2A44;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+  }
+
+  ::selection {
+    background: rgba(200, 138, 61, 0.18);
+    color: #1F2A44;
+  }
+
+  :focus-visible {
+    outline: 2px solid #C88A3D;
+    outline-offset: 3px;
+  }
+
+  /* Subtle scrollbar */
+  ::-webkit-scrollbar { width: 5px; }
+  ::-webkit-scrollbar-track { background: #F7F6F3; }
+  ::-webkit-scrollbar-thumb { background: #D9D9D9; border-radius: 2px; }
+  ::-webkit-scrollbar-thumb:hover { background: #4B6382; }
+}
+
+/* ─── Engineering drawing grid ───────────────────────────────────────────── */
+
+.eng-grid {
+  background-image:
+    linear-gradient(rgba(217, 217, 217, 0.5) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(217, 217, 217, 0.5) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.eng-grid-fine {
+  background-image:
+    linear-gradient(rgba(217, 217, 217, 0.35) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(217, 217, 217, 0.35) 1px, transparent 1px),
+    linear-gradient(rgba(217, 217, 217, 0.18) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(217, 217, 217, 0.18) 1px, transparent 1px);
+  background-size: 80px 80px, 80px 80px, 16px 16px, 16px 16px;
+}
+
+/* ─── Professional card ──────────────────────────────────────────────────── */
+
+.pro-card {
+  background: #FFFFFF;
+  border: 1px solid #D9D9D9;
+  border-radius: 2px;
+}
+
+.pro-card-hover {
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.pro-card-hover:hover {
+  border-color: #4B6382;
+  box-shadow: 0 4px 20px rgba(31, 42, 68, 0.08), 0 1px 4px rgba(31, 42, 68, 0.04);
+  transform: translateY(-2px);
+}
+
+/* ─── Section label ──────────────────────────────────────────────────────── */
+
+.section-label {
+  font-family: var(--font-ibm-plex-mono), monospace;
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #4B6382;
+}
+
+/* ─── Rule divider ───────────────────────────────────────────────────────── */
+
+.rule-bronze {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.rule-bronze::before,
+.rule-bronze::after {
+  content: '';
+  display: block;
+  height: 1px;
+  width: 32px;
+  background: #C88A3D;
+}
+
+/* ─── Technical annotation marks ────────────────────────────────────────── */
+
+.crosshair {
+  position: relative;
+}
+.crosshair::before,
+.crosshair::after {
+  content: '';
+  position: absolute;
+  background: #D9D9D9;
+}
+.crosshair::before { width: 1px; height: 12px; left: 50%; top: 50%; transform: translate(-50%, -50%); }
+.crosshair::after  { width: 12px; height: 1px; left: 50%; top: 50%; transform: translate(-50%, -50%); }
+
+/* ─── Section spacing ─────────────────────────────────────────────────────── */
+
+.section-padding {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+@media (min-width: 1024px) {
+  .section-padding {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ─── Bronze gradient text ───────────────────────────────────────────────── */
+
+.text-bronze-gradient {
+  background: linear-gradient(135deg, #C88A3D 0%, #D4A06A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Technical border accent ────────────────────────────────────────────── */
+
+.border-l-bronze {
+  border-left: 3px solid #C88A3D;
+}
+
+.border-t-navy {
+  border-top: 3px solid #1F2A44;
+}
+
+/* ─── Reduced motion ──────────────────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

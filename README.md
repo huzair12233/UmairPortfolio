@@ -1,36 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Umair Engineering Portfolio
+
+Premium aerospace engineering portfolio built with **Next.js 15**, **TypeScript**, **Tailwind CSS v4**, **Framer Motion**, and **shadcn/ui**.
+
+## Design System — Aerospace Blueprint Noir
+
+| Token | Value |
+|---|---|
+| Background | `#060B18` near-black navy |
+| Accent Cyan | `#00D4FF` |
+| Accent Green | `#06FFA5` |
+| Accent Amber | `#FFB800` |
+| Display Font | Orbitron |
+| Body Font | IBM Plex Sans |
+| Mono Font | IBM Plex Mono |
+
+## Project Structure
+
+```
+portfolio/
+├── app/
+│   ├── layout.tsx          # Root layout, fonts, SEO metadata
+│   ├── page.tsx            # Main page assembling all sections
+│   └── globals.css         # Design system CSS variables + utilities
+├── components/
+│   ├── sections/
+│   │   ├── HeroSection.tsx         # Blueprint animation hero + avatar
+│   │   ├── AboutSection.tsx        # Education timeline
+│   │   ├── ExpertiseSection.tsx    # 8 expertise cards
+│   │   ├── SoftwareSection.tsx     # Skill bars + badge cloud
+│   │   ├── ServicesSection.tsx     # 8 service cards
+│   │   ├── ProjectsSection.tsx     # Dynamic projects + modal + filters
+│   │   ├── MetricsSection.tsx      # Animated counters
+│   │   ├── TestimonialsSection.tsx # Client testimonials
+│   │   ├── ContactSection.tsx      # Contact form
+│   │   └── FooterSection.tsx       # Footer
+│   └── ui-custom/
+│       └── NavBar.tsx              # Sticky nav with active section tracking
+├── data/
+│   └── projects.ts         # All project data (scalable)
+├── public/
+│   └── projects/
+│       ├── project1/       # img-1.jpg … img-8.jpg
+│       ├── project2/ … project6/
+└── vercel.json
+```
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Adding New Projects
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Add images to `public/projects/projectN/img-1.jpg` etc.
+2. Add an entry to `data/projects.ts` following the `Project` interface.
+3. No other code changes needed — projects load dynamically.
 
-## Learn More
+## Deploy to Vercel
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npx vercel --prod
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Or push to GitHub and import via the Vercel dashboard. `vercel.json` is already configured.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Wiring Up the Contact Form
 
-## Deploy on Vercel
+The contact form currently simulates a send. Replace the `handleSubmit` in `ContactSection.tsx`:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**Formspree (simplest):**
+```ts
+const res = await fetch("https://formspree.io/f/YOUR_ID", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify(form),
+});
+if (!res.ok) throw new Error("Send failed");
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## SEO Keywords Targeted
+
+`CFD Engineer` · `FEA Engineer` · `ANSYS Expert` · `Thermal Engineer` · `Aeronautical Engineer` · `Engineering Consultant` · `Online Engineering Tutor`
