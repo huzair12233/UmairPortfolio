@@ -17,8 +17,8 @@ function TechnicalIllustration() {
         {/* Project image — framed like a technical drawing plate */}
         <div className="relative w-full aspect-[4/3] overflow-hidden border border-[#D9D9D9]">
           <Image
-            src="/projects/project1/img-4.jpg"
-            alt="Blended Wing Body Aircraft — CFD Analysis, ANSYS Fluent"
+            src="/hero.jpg"
+            alt="Umair Ahmed Ansari — Engineering Portfolio"
             fill
             className="object-cover"
             priority
