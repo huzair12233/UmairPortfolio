@@ -7,9 +7,9 @@ const timeline = [
   {
     num: "01",
     period: "B.Tech",
-    title: "Mechanical Engineering",
+    title: "Aeronautical Engineering",
     sub: "Bachelor of Technology",
-    body: "Foundational study in fluid mechanics, thermodynamics, machine design, manufacturing processes, and engineering mathematics. Built a strong base in analytical and computational methods across mechanical systems.",
+    body: "Foundational study in aerodynamics, fluid mechanics, thermodynamics, propulsion, aircraft structures, and engineering mathematics. Built a strong base in analytical and computational methods across aerospace systems.",
     tags: ["Fluid Mechanics", "Thermodynamics", "Machine Design", "Engineering Mathematics"],
     color: "#1F2A44",
   },
@@ -28,7 +28,7 @@ const timeline = [
     title: "Engineering Education",
     sub: "Online Teaching & Mentoring",
     body: "Teaching Mathematics, Physics, and Engineering at undergraduate and graduate levels. Mentored students globally in CFD, FEA, and advanced engineering subjects through structured, personalised instruction.",
-    tags: ["Mathematics", "Physics", "Mechanical Eng.", "Aeronautics"],
+    tags: ["Mathematics", "Physics", "Aeronautical Eng.", "Aeronautics"],
     color: "#C88A3D",
   },
   {
@@ -127,7 +127,7 @@ export default function AboutSection() {
             <span className="italic">Foundation</span>
           </h2>
           <p className="text-[#5A6A7A] text-lg max-w-xl leading-relaxed">
-            M.Tech in Thermal Engineering, B.Tech in Mechanical Engineering — combining strong technical
+            M.Tech in Thermal Engineering, B.Tech in Aeronautical Engineering — combining strong technical
             foundations with five years of teaching experience and active engineering consultancy.
           </p>
         </motion.div>
@@ -152,7 +152,7 @@ export default function AboutSection() {
             — applied to every project regardless of scale.&rdquo;
           </p>
           <cite className="block mt-3 text-xs font-[family-name:var(--font-ibm-plex-mono)] tracking-widest text-[#8A9BAA] uppercase not-italic">
-            — Umair Ansari · M.Tech Thermal Engineering · B.Tech Mechanical Engineering
+            — Umair Ansari · M.Tech Thermal Engineering · B.Tech Aeronautical Engineering
           </cite>
         </motion.blockquote>
       </div>

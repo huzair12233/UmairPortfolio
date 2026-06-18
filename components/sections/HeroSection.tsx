@@ -134,7 +134,7 @@ export default function HeroSection() {
               transition={{ delay: 0.55, duration: 0.6 }}
               className="flex flex-wrap gap-x-6 gap-y-2 mb-10 text-xs font-[family-name:var(--font-ibm-plex-mono)] text-[#8A9BAA] tracking-widest uppercase"
             >
-              {["M.Tech Thermal Eng.", "B.Tech Mechanical Eng.", "5+ Yrs. Teaching", "ANSYS Specialist"].map((c) => (
+              {["M.Tech Thermal Eng.", "B.Tech Aeronautical Eng.", "5+ Yrs. Teaching", "ANSYS Specialist"].map((c) => (
                 <span key={c} className="flex items-center gap-1.5">
                   <span className="w-1 h-1 bg-[#C88A3D] rounded-full flex-shrink-0" />
                   {c}

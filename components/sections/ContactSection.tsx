@@ -126,7 +126,7 @@ export default function ContactSection() {
                   {EMAIL}
                 </div>
                 <div className="text-xs text-[#8A9BAA] font-[family-name:var(--font-ibm-plex-mono)]">
-                  Response within 24 hours
+                  Response within 2 hours
                 </div>
               </div>
             </a>
