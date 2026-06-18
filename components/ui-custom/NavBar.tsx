@@ -66,7 +66,7 @@ export default function NavBar() {
                 </span>
               </div>
               <span className="hidden sm:block font-[family-name:var(--font-source-sans)] text-xs font-600 tracking-[0.18em] uppercase text-[#1F2A44]">
-                Umair Ansari
+                Umair Ahmed Ansari
               </span>
             </a>
 

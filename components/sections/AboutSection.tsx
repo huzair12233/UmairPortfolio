@@ -152,7 +152,7 @@ export default function AboutSection() {
             — applied to every project regardless of scale.&rdquo;
           </p>
           <cite className="block mt-3 text-xs font-[family-name:var(--font-ibm-plex-mono)] tracking-widest text-[#8A9BAA] uppercase not-italic">
-            — Umair Ansari · M.Tech Thermal Engineering · B.Tech Aeronautical Engineering
+            — Umair Ahmed Ansari · M.Tech Thermal Engineering · B.Tech Aeronautical Engineering
           </cite>
         </motion.blockquote>
       </div>

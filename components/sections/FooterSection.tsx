@@ -48,7 +48,7 @@ export default function FooterSection() {
                 <span className="font-[family-name:var(--font-cormorant)] text-sm font-700 text-white leading-none">U</span>
               </div>
               <span className="font-[family-name:var(--font-source-sans)] text-xs font-600 tracking-[0.18em] uppercase text-white">
-                Umair Ansari
+                Umair Ahmed Ansari
               </span>
             </div>
             <p className="text-sm text-[rgba(255,255,255,0.5)] leading-relaxed max-w-xs mb-6">
@@ -119,7 +119,7 @@ export default function FooterSection() {
         {/* Bottom bar */}
         <div className="flex items-center justify-between py-5">
           <div className="text-[10px] font-[family-name:var(--font-ibm-plex-mono)] text-[rgba(255,255,255,0.3)] tracking-widest">
-            © {new Date().getFullYear()} Umair Ansari Engineering. All rights reserved.
+            © {new Date().getFullYear()} Umair Ahmed Ansari Engineering. All rights reserved.
           </div>
           <div className="flex items-center gap-6">
             <div className="hidden sm:flex gap-4">
